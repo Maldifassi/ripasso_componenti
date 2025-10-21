@@ -1,0 +1,26 @@
+<form (ngSubmit)="addStudent()">
+  <input
+    type="text"
+    id="name"
+    name="nome"
+    [(ngModel)]="newStudent.nome"
+    placeholder="Nome studente"
+  />
+  
+  <input
+    type="number"
+    id="voto"
+    name="voto"
+    [(ngModel)]="newStudent.voto"
+    placeholder="Voto"
+  />
+
+  <button type="submit">Aggiungi</button>
+</form>
+
+<ul>
+    <li *ngFor="let studente of studenti; let i = index">
+        {{ i + 1 }}. {{ studente.nome }} {{ studente.voto }}
+        <button (click)="removeStudent(i)">Rimuovi</button>
+    </li>
+</ul>
