@@ -1,15 +1,17 @@
-<p>app component</p>
-<app-componente1></app-componente1>
-<app-esercizio1></app-esercizio1>
-<app-esercizio2></app-esercizio2>
-<app-esercizio3></app-esercizio3>
+<!--APP COMPONENT-->
 <div style="border:2px solid #222; padding:12px; margin:12px 0;">
     <h2 style="margin-top:0;">APP COMPONENT (genitore)</h2>
     <p>Messaggio che voglio inviare al figlio: <strong>{{ messaggio }}</strong></p>
+    <!--Componente1-->
     <app-componente1 [testo]="messaggio"></app-componente1>
 </div>
+<app-esercizio1></app-esercizio1>
+<app-esercizio2></app-esercizio2>
+<app-esercizio3></app-esercizio3>
+<h3>Post visualizzati: {{ postVisibili.length }}</h3>
 <app-post
     *ngFor="let p of posts"
     [titolo]="p.titolo"
     [testo]="p.testo">
 </app-post>
+<p *ngIf="posts.length === 0">Nessun post Disponibile</p>
